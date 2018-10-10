@@ -35,14 +35,12 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
               width: 25.0,
             ),
             Container(
-              child:  Image.asset(
+              child: Image.asset(
                 "magnet.png",
                 height: 20.0,
                 width: 18.0,
-                
                 fit: BoxFit.contain,
               ),
-             
             ),
             SizedBox(
               width: 15.0,
@@ -70,26 +68,62 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
             Container(
               padding: EdgeInsets.all(20.0),
               child: Center(
-                child: Text(
-                  "You have not added any torrents.Select Add torrent to add new torrents.You can also add magnet links.",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18.0,
+                child: RichText(
+                  text: new TextSpan(
+                    style: new TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18.0,
+                      color: Colors.grey.shade700,
+                    ),
+                    children: <TextSpan>[
+                      new TextSpan(
+                        text: 'You have not added any torrents.Select ',
+                      ),
+                      new TextSpan(
+                        text: 'Add torrent ',
+                        style: new TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      new TextSpan(
+                        text:
+                            'to add new torrents.You can also add magnet links.',
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.ltr,
                 ),
               ),
             ),
             Container(
               padding: EdgeInsets.all(20.0),
               child: Center(
-                child: Text(
-                  "Currently there are no queued torrents. Select Add torrent to add new torrents.You can also add magnet links.",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 18.0,
+                child: RichText(
+                  text: new TextSpan(
+                    style: new TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18.0,
+                      color: Colors.grey.shade700,
+                    ),
+                    children: <TextSpan>[
+                      new TextSpan(
+                        text: 'Currently there are no queued torrents. Select ',
+                      ),
+                      new TextSpan(
+                        text: 'Add torrent ',
+                        style: new TextStyle(
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      new TextSpan(
+                        text:
+                            'to add new torrents.You can also add magnet links.',
+                      ),
+                    ],
                   ),
                   textAlign: TextAlign.center,
+                  textDirection: TextDirection.ltr,
                 ),
               ),
             ),
@@ -101,6 +135,7 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 18.0,
+                    color: Colors.grey.shade700,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -112,6 +147,7 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.pink.withAlpha(200),
           child: Icon(Icons.add),
+          elevation: 2.0,
           onPressed: () {},
         ),
       ),
